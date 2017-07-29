@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+  "name": "RebuildStockroom",
+  "description": "Save current time of rebuild.fm",
+  "version": "1.0",
+  "permissions": [
+    "tabs",
+    "http://rebuild.fm/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://rebuild.fm/*"],
+      "js": ["myscript.js"]
+    }
+  ]
+}
