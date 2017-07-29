@@ -4,8 +4,8 @@ var playButton = document.getElementsByTagName('button')[0];
 var currentTime;
 
 episode.currentTime = getCurrentTime();
-alertCurrentTimeAndPlay();
 playButton.focus();
+alertCurrentTimeAndPlay();
 
 setInterval(function() {
     saveCurrentTime();
@@ -22,7 +22,7 @@ function saveCurrentTime() {
 
 function getFormattedCurrentTime(second) {
     var hour = Math.floor(second / 3600);
-    var minute = Math.floor(second / 60)-60;
+    var minute = Math.floor(second / 60);
     var second = Math.floor(second % 60);
 
     return paddingTime(hour) + ':' + paddingTime(minute) + ':' + paddingTime(second);
@@ -34,7 +34,7 @@ function paddingTime(time) {
 
 function alertCurrentTimeAndPlay() {
     if (getCurrentTime() != 0) {
-        alert('Rebuild Stockroom\nCurrent Time: '+getFormattedCurrentTime(getCurrentTime()));
+        // alert('Rebuild Stockroom\nCurrent Time: '+getFormattedCurrentTime(getCurrentTime()));
         episode.play();
     }
 }
