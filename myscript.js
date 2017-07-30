@@ -33,8 +33,9 @@ function paddingTime(time) {
 }
 
 function alertCurrentTimeAndPlay() {
-    if (getCurrentTime() != 0) {
-        // alert('Rebuild Stockroom\nCurrent Time: '+getFormattedCurrentTime(getCurrentTime()));
-        episode.play();
-    }
+    // if (getCurrentTime() != 0) {
+    //     alert('Rebuild Stockroom\nCurrent Time: '+getFormattedCurrentTime(getCurrentTime()));
+    //     episode.play();
+    // }
+    episode.play();
 }
