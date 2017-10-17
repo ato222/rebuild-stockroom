@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "RebuildStockroom",
   "description": "Save current time of rebuild.fm",
-  "version": "1.1",
+  "version": "2",
   "permissions": [
     "tabs",
     "http://rebuild.fm/*"
