@@ -2,7 +2,7 @@ function rebuildRebuild() {
   var episode = document.getElementsByTagName('audio')[0];
 
   submitKeyboardShortcut();
-  startEpisode();
+  playEpisode();
   startSavingLoop();
 
   function submitKeyboardShortcut() {
@@ -13,23 +13,23 @@ function rebuildRebuild() {
     });
   }
 
-  function startEpisode() {
-    episode.currentTime = getCurrentTime();
+  function playEpisode() {
+    episode.currentTime = preTime();
     episode.play();
   }
 
   function startSavingLoop() {
     setInterval(function() {
-      saveCurrentTime();
+      saveTime();
     }, 1000);
   }
 
-  function getCurrentTime() {
+  function preTime() { // return "0" if it's first playing.
     var episode_url = episode.src;
-    return (localStorage.getItem(episode_url)) ? localStorage.getItem(episode_url) : 0;
+    return (localStorage.getItem(episode_url)) ? localStorage.getItem(episode_url) : "0";
   }
 
-  function saveCurrentTime() {
+  function saveTime() {
     var episode_url = episode.src;
     localStorage.setItem(episode_url, Math.floor(episode.currentTime));
   }
